@@ -23,3 +23,16 @@ function confirmPOST($campo, $vuelta){
 function confirmLogin($inputLogin, $inputPassword, $login, $password){
     return $inputLogin == $login and password_verify($password, $inputPassword);
 }
+
+function isAdmin($usuario){
+    return $usuario->rol == "administrador";
+}
+
+function loadMain($usuario){
+    if(isAdmin($usuario)){
+        header("Location: mainAdmin.php");
+    }
+    else{
+        header("Location: main.php");
+    }
+}

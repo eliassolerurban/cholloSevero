@@ -11,6 +11,9 @@ class Chollo{
         public string $fecha,
         public int $votos
     ){
-        $this->id = null;
+    }
+
+    public function setId($id){
+        $this->id = $id;
     }
 }

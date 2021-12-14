@@ -9,9 +9,12 @@ class Usuario{
         private string $password,
         public string $rol
     ){
-        $this->id = null;   
     }
 
+    public function setId($id){
+        $this->id = $id;
+    }
+    
     public function getLogin(){
         return $this->login;
     }

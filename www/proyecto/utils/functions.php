@@ -19,3 +19,7 @@ function confirmPOST($campo, $vuelta){
         die();
     }
 }
+
+function confirmLogin($inputLogin, $inputPassword, $login, $password){
+    return $inputLogin == $login and password_verify($password, $inputPassword);
+}

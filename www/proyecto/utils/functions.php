@@ -24,6 +24,17 @@ function confirmLogin($inputLogin, $inputPassword, $login, $password){
     return $inputLogin == $login and password_verify($password, $inputPassword);
 }
 
+function confirmLoggedIn(){
+    if(!isset($_SESSION)){
+        session_start();   
+        if(!isset($_SESSION["usuario"])){
+            $error = "no estás logueado";
+            include "formLogin.php";
+            die();
+        }
+    }
+}
+
 function isAdmin($usuario){
     return $usuario->rol == "administrador";
 }
@@ -36,3 +47,4 @@ function loadMain($usuario){
         header("Location: main.php");
     }
 }
+

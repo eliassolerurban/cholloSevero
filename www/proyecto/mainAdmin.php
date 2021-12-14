@@ -3,16 +3,9 @@
 include "utils/functions.php";
 include "Class/Usuario.php";
 
-if(!isset($_SESSION)){
-    session_start();   
-    if(!isset($_SESSION["usuario"])){
-        $error = "no estás logueado";
-        include "formLogin.php";
-        die();
-    }
-}
+confirmLoggedIn();
 
-else if(!isAdmin($_SESSION["usuario"])){
+if(!isAdmin($_SESSION["usuario"])){
     die("tienes que ser administrador :(");
 }
 

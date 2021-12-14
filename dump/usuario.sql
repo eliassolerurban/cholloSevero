@@ -1,5 +1,5 @@
 use cholloSevero;
-create table usuario(
+create table if not exists usuario(
     id int primary key auto_increment,
     nombre varchar(256) not null,
     login varchar(256) unique not null,

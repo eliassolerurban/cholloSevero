@@ -48,3 +48,7 @@ function loadMain($usuario){
     }
 }
 
+function assocToUsuario($assoc){    
+    return new Usuario($assoc["id"], $assoc["nombre"], $assoc["login"], $assoc["password"], $assoc["rol"]);
+}
+

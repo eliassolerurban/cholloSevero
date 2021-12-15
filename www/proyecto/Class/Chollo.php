@@ -1,9 +1,9 @@
 <?php
 
 class Chollo{
-    private int $id;
-
+    
     public function __construct(
+        private int $id,
         public string $titulo,
         public float $precio,
         public int $id_usuario,
@@ -11,9 +11,5 @@ class Chollo{
         public string $fecha,
         public int $votos
     ){
-    }
-
-    public function setId($id){
-        $this->id = $id;
     }
 }

@@ -19,9 +19,7 @@ $isOK = $sql-> execute([
 $registro = $sql -> fetch(); 
 
 if($registro and confirmLogin($registro["login"], $registro["password"], $login, $password)){
-    $usuario = new Usuario($registro["nombre"], $registro["login"], $registro["password"], $registro["rol"]);
-    $usuario->setId($registro["id"]);
-
+    $usuario = assocToUsuario($registro);
     session_start();
     $_SESSION["usuario"] = $usuario;
 

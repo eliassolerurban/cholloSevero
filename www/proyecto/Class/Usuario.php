@@ -1,18 +1,14 @@
 <?php
 
 class Usuario{
-    private int $id;
-
+    
     public function __construct(
+        private int $id,
         public string $nombre,
         private string $login,
         private string $password,
         public string $rol
     ){
-    }
-
-    public function setId($id){
-        $this->id = $id;
     }
     
     public function getLogin(){
